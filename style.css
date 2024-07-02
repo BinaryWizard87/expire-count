@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 400;
+}
+h3:hover {
+  color: rgb(150, 191, 227);
+  cursor: pointer;
+}
+input {
+  color: hsl(224, 82%, 64%);
+  font-weight: bold;
+  padding: 0;
+  display: flex;
+  text-align: center;
+  font-size: 2rem;
+  border: none;
+  margin: 20px;
+}
+input:hover {
+  color: hsl(224, 100%, 44%);
+}
+
+.calculate-date {
+  margin: 20px;
+}
