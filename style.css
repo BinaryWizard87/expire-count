@@ -9,9 +9,13 @@ body {
   justify-content: center;
   font-family: "Poppins", sans-serif;
   font-size: 400;
+  background-color: darkgrey;
+}
+.container {
+  background-image: url();
 }
 h3:hover {
-  color: rgb(150, 191, 227);
+  color: rgb(216, 68, 19);
   cursor: pointer;
 }
 input {
