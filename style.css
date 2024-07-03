@@ -9,7 +9,6 @@ body {
   justify-content: center;
   font-family: "Poppins", sans-serif;
   font-size: 400;
-  background-color: darkgrey;
 }
 .container {
   background-image: url();
@@ -34,4 +33,20 @@ input:hover {
 
 .calculate-date {
   margin: 20px;
+}
+.date {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  color: rgb(154, 35, 154);
+}
+.date:hover {
+  color: rgb(181, 119, 181);
+}
+img {
+  width: 200pxpx;
+  height: 50px;
 }
