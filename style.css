@@ -10,9 +10,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 400;
 }
-.container {
-  background-image: url();
-}
+
 h3:hover {
   color: rgb(216, 68, 19);
   cursor: pointer;
@@ -49,4 +47,42 @@ input:hover {
 img {
   width: 200pxpx;
   height: 50px;
+}
+
+.all {
+  display: flex;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  font-weight: bold;
+  font-family: cursive;
+  background: red;
+  border-radius: 40%;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  animation: toogleColors 10000ms ease-in-out infinite;
+}
+.box:hover {
+  font-size: large;
+  color: aliceblue;
+  border-radius: 30px;
+  cursor: pointer;
+}
+@keyframes toogleColors {
+  0% {
+    background: red;
+    top: 0px;
+  }
+  50% {
+    background: yellow;
+    top: 600px;
+  }
+  100% {
+    background: blue;
+    top: 0px;
+  }
 }
