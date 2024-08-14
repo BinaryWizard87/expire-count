@@ -25,21 +25,26 @@
       </nav>
 
       <div class="hero-section">
-        <div class="text-side">
-          <h2>Hello guys, welcome to our team website</h2>
-          <p>We bring more joy to our team</p>
+        
+        <div class="hero hero-text">
+          <label for="input">Enter number of Days</label>
+          <input type="number" id="userDays" placeholder="Enter number of days">
+          <button onclick="calculateFutureDateByDays()">Calculate</button>
+          <h3 id="resultDay"></h3>
+      <label for="input">Enter number of Months</label>
+          <input type="number" id="userMonths" placeholder="Number of months">
+<button onclick="calculateFutureDate()">Calculate</button>
+<h3 id="resultMonth"></h3>
 
-          <h3 id="current-time"></h3>
+        </div> 
+        
+        <div class="hero hero-dateTime">
+          <h3 class="hero-time" id="current-time"></h3>
+          <h2 class="hero-date" id="currentDate"></h2>
+
         </div>
 
-        <!-- <div class="image-side">
-          <div class="clock">
-            <div class="seconds"></div>
-            <div class="minutes"></div>
-            <div class="minute">44</div>
-            <div class="hour"></div>
-          </div>
-        </div> -->
+        </div>
       </div>
 
       <div id="Cal2" class="calculator">

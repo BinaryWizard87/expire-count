@@ -18,6 +18,69 @@ window.onload = function () {
   updateExpirationDates();
 };
 
+/* This is current date in hero section */
+const currentDate = new Date();
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+}; // Customize format as needed
+
+/* Calculate how many month from today */
+const formattedDate = currentDate.toLocaleDateString("en-US", options); // Adjust locale if necessary
+
+const dateElement = document.getElementById("currentDate");
+dateElement.textContent = formattedDate;
+
+function calculateFutureDate() {
+  const userMonths = parseInt(document.getElementById("userMonths").value);
+  if (isNaN(userMonths)) {
+    alert("Please enter a valid number of months");
+    return;
+  }
+
+  const today = new Date();
+  let year = today.getFullYear();
+  let month = today.getMonth() + 1 + userMonths;
+  let day = today.getDate();
+
+  // Adjust for month and year overflow
+  while (month > 12) {
+    month -= 12;
+    year++;
+  }
+
+  const futureDate = new Date(year, month - 1, day); // Create the future date
+  const formattedDate = futureDate.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  document.getElementById("resultMonth").textContent = formattedDate;
+}
+
+/* Calculate how manu day from today */
+function calculateFutureDateByDays() {
+  const userDays = parseInt(document.getElementById("userDays").value); // Assuming an input field with id "userDays"
+  if (isNaN(userDays)) {
+    alert("Please enter a valid number of days");
+    return;
+  }
+
+  const today = new Date();
+  today.setDate(today.getDate() + userDays);
+
+  const formattedDate = today.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  document.getElementById("resultDay").textContent = formattedDate;
+}
+
 function updateExpirationDates() {
   const today = new Date();
   const rows = document.querySelectorAll(".exp-table tbody tr");
@@ -87,21 +150,6 @@ const seconds = document.querySelector(".seconds");
 const minutes = document.querySelector(".minutes");
 const minute = document.querySelector(".minute");
 const hour = document.querySelector(".hour");
-
-// Create spikes
-for (let s = 0; s < 60; s++) {
-  let mSpikeEl = document.createElement("i");
-  let sSpikeEl = document.createElement("i");
-  mSpikeEl.className = "spike";
-  sSpikeEl.className = "spike";
-  mSpikeEl.style = `--rotate:${6 * s}deg`;
-  sSpikeEl.style = `--rotate:${6 * s}deg`;
-  mSpikeEl.setAttribute("data-i", s);
-  sSpikeEl.setAttribute("data-i", s);
-
-  seconds.append(sSpikeEl);
-  minutes.append(mSpikeEl);
-}
 
 function getTime() {
   let date = new Date(),
